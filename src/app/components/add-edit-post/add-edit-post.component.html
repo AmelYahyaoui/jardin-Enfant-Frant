@@ -1,0 +1,74 @@
+<div class="relative flex flex-col min-w-0 break-words bg-white rounded-md xl:mb-0 shadow-lg p-1">
+  <div class="ml-2 mt-3 mb-3">
+    <div class="flex flex-wrap">
+      <img
+        alt="..."
+        class="rounded-full shadow-lg"
+        src="assets/img/amel-profile.jpg"
+        style="width: 50px; height: 50px"
+      />
+      <div class="relative w-full ml-4 pr-4 max-w-full flex-grow flex-1">
+        <input type="text"
+               id="add-post-input"
+               placeholder="Hi Amel!! What's in your mind?"
+               class="text-blueGray-600 relative bg-white bg-white rounded-full shadow focus:outline-none mt-2 col-12"
+               style="height: 35px; display: block"
+               (click)="showForm()"
+                *ngIf="showFormAddEditPost"/>
+        <div *ngIf="!showFormAddEditPost">
+          <h1 class="font-bold h1">Hi AMEL!! Let's tell us what's in your mind!!</h1>
+          <form class="mt-4" #add_edit_post_form>
+            <div class="form-group">
+              <label class="font-bold" for="postSubject">Post Subject</label>
+              <input type="text" class="form-control" id="postSubject" placeholder="Enter the post subject" #postSubject name="postSubject">
+            </div>
+            <div class="form-group">
+              <label class="font-bold" for="postCategory">Post Category</label>
+              <input type="text" class="form-control" id="postCategory" placeholder="Enter the post category" #postCategory>
+            </div>
+            <div class="form-group">
+              <label class="font-bold" for="postBody">Post Body</label>
+              <textarea class="form-control" id="postBody" rows="2" placeholder="Enter the post body" #postBody></textarea>
+            </div>
+            <div class="form-group" id="post-Attach-elet">
+              <label class="font-bold">Post Attachments</label>
+              <div class="image-upload ml-2">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="img-input"><i class="fa fa-file-image mr-2" style="font-size: 2.5em"></i></label>
+                    <label class="mr-5"  for="img-input" id="uploaded-image-name">No image uploaded</label>
+                    <input id="img-input" type="file" (change)="uploadFile($event);" accept="image/*" style="display: none" #postImgAtt/>
+                  </div>
+
+                  <div class="col-4">
+                    <label for="video-input"><i class="fa fa-file-video mr-2" style="font-size: 2.5em"></i></label>
+                    <label class="mr-5" for="video-input" id="uploaded-video-name">No video uploaded</label>
+                    <input id="video-input" type="file" (change)="uploadFile($event);" accept="video/*" style="display: none" #postVidAtt/>
+                  </div>
+
+                  <div class="col-4">
+                    <label for="file-input"><i class="fa fa-file-alt mr-2" style="font-size: 2.5em"></i></label>
+                    <label class="mr-5" for="file-input" id="uploaded-file-name">No file uploaded</label>
+                    <input id="file-input" type="file" (change)="uploadFile($event);" style="display: none" #postFileAtt/>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="form-group float-right mb-n1 pb-2 pt-1">
+              <button type="button" class="btn btn-danger text-white mr-2" (click)="hideForm()"><i class="fa fa-undo mr-2"></i>Cancel</button>
+              <button type="button" class="btn btn-info" (click)="onSave($event)">
+                <i class="fa fa-check mr-2"></i>
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

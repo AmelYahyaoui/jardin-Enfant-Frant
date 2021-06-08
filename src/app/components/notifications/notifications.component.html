@@ -1,0 +1,25 @@
+
+<div class="min-w-48 z-50 fixed bg-white border-red-700 border-2" style="margin-top: -57px; margin-left: 660px; width: 240px" *ngIf="showNotifBar">
+  <div *ngFor="let n of notifsList; let index = index;">
+    <div class="border-t border-b p-2 pr-3 pl-3" [ngClass]="{'bg-blueGray-100': n.status}" *ngIf="showAllNotifs(index)">
+      <p><span class="font-bold">Amel Yahyaoui</span> has
+        <span *ngIf="n.objetNotif === 'Comment'">commented</span>
+        <span *ngIf="n.objetNotif === 'Like' || n.objetNotif === 'Love' || n.objetNotif === 'Deslike'">reacted</span>
+      </p>
+      <p class="mt-n3" *ngIf="n.objetNotif === 'Like' || n.objetNotif === 'Love' || n.objetNotif === 'Deslike'">
+        with a
+        <i class="fas fa-thumbs-up text-lightBlue-600" style="font-size: 1.4em" *ngIf="n.objetNotif === 'Like'"></i>
+        <i class="fas fa-heart text-red-600" style="font-size: 1.4em" *ngIf="n.objetNotif === 'Love'"></i>
+        <i class="fas fa-thumbs-down text-warning" style="font-size: 1.4em" *ngIf="n.objetNotif === 'Deslike'"></i>
+        to your post
+      </p>
+      <p class="mt-n3" *ngIf="n.objetNotif === 'Comment'">
+       your post
+      </p>
+    </div>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-outline col-12 outline-none " (click)="toggleShowAllNotifsFlag()"><span *ngIf="showAllNotifsFlag === false">Show More ...</span><span *ngIf="showAllNotifsFlag === true">Show Less ...</span></button>
+  </div>
+</div>
+

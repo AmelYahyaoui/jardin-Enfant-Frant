@@ -1,0 +1,10 @@
+.align-elements-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-position {
+  margin-top: 120px;
+  margin-left: 25px
+}

@@ -1,0 +1,19 @@
+<!--<app-admin-navbar></app-admin-navbar>-->
+<div class="container" style="padding-left: 100px; padding-right: 100px; margin-bottom: 15%">
+  <h1>Let's tell us what's bother you!!</h1>
+
+  <form class="mt-5">
+    <div class="form-group">
+      <label for="fObject">Feedback Object</label>
+      <input type="text" class="form-control" id="fObject" aria-describedby="fObject" placeholder="Enter the feedback object here" #feedObj>
+    </div>
+    <div class="form-group">
+      <label for="feedback">Feedback</label>
+      <textarea class="form-control" id="feedback" rows="7"  #feedCont></textarea>
+    </div>
+    <div class="float-right">
+      <button type="button" class="btn btn-primary" (click)="submitFeedback()">Submit</button>
+    </div>
+  </form>
+</div>
+<!--<app-footer-admin></app-footer-admin>-->

@@ -1,0 +1,4 @@
+/* webkit solution */
+::-webkit-input-placeholder { padding-left: 30px; }
+/* mozilla solution */
+input:-moz-placeholder { padding-left: 30px; }

@@ -1,0 +1,54 @@
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full z-10 bg-red-600 md:justify-start flex navbar-expand-lg  items-center p-2 shadow md:overflow-hidden">
+  <div class="w-full mx-autp items-center flex md:flex-nowrap flex-wrap md:px-10 px-4">
+    <!-- Brand -->
+    <div class="items-center flex">
+      <span class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
+        <img alt="..."
+          class="w-full rounded-full align-middle border-none shadow-lg"
+          src="assets/img/logo.png"/>
+      </span>
+      <a class="text-white uppercase hidden lg:inline-block font-bold ml-3" href="#">Super Kids</a>
+    </div>
+      <style>
+          /* webkit solution */
+          ::-webkit-input-placeholder { padding-left: 30px; }
+          /* mozilla solution */
+          input:-moz-placeholder { padding-left: 30px; }
+      </style>
+    <div style="margin-left: 3.5rem; margin-right: 3.5rem">
+        <span
+          class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-2 mr-2">
+          <i class="fas fa-search"></i>
+        </span>
+      <input type="text"
+        placeholder="Search here..."
+        class="border-0 px-3 py-0 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none pl-10 p-2"
+        style="width: 650px"/>
+    </div>
+    <div >
+      <a style="margin-right: 40px" title="Home" [routerLink]="['posts']"><i class="fas fa-home text-white" style="font-size: 1.9em"></i></a>
+      <a style="margin-right: 40px" title="My Profile" [routerLink]="['profile']"><i class="fas fa-user-alt text-white" style="font-size: 1.85em"></i></a>
+      <button style="margin-right: 40px" title="Notifications" (click)="ShowNotifsCompo()"><i class="fas fa-bell text-white" style="font-size: 1.85em"></i></button>
+<!--      <div class="dropdown">-->
+<!--        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          Dropdown button-->
+<!--        </button>-->
+<!--        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+<!--          <a class="dropdown-item" href="#">Action</a>-->
+<!--          <a class="dropdown-item" href="#">Another action</a>-->
+<!--          <a class="dropdown-item" href="#">Something else here</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <app-notification-dropdown></app-notification-dropdown>-->
+      <a style="margin-right: 40px" title="Give A Feedback" [routerLink]="['feedback']"><i class="fas fa-question text-white" style="font-size: 1.8em"></i></a>
+    </div>
+    <div class="mr-3">
+      <app-user-dropdown ></app-user-dropdown>
+    </div>
+  </div>
+</nav>
+
+
+
+
